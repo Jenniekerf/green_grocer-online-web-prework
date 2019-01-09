@@ -1,16 +1,14 @@
 def consolidate_cart(cart)
-  new_cart = {}
-  cart.each do |hash|
-    hash.each do |name, describe|
-      if new_cart[name]
-        new_cart[name][:count] += 1 
-      else 
-        new_cart[name] = describe
-        new_cart[name][:count] =1
+  cart.each_with_object({}) do |item, result|
+    item.each do |type, attributes|
+      if result[type]
+        attributes[:count] += 1
+      else
+        attributes[:count] = 1
+        result[type] = attributes
+      end
     end
   end
-end
-new_cart
 end
 
 
