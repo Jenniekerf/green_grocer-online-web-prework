@@ -14,6 +14,7 @@ end
 
 
 def apply_coupons(cart, coupons)
+  new_cart = cart
 coupons.each do |coupon|
     name = coupon[:item] 
     num_of_c = coupon[:num]
