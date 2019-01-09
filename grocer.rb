@@ -35,8 +35,11 @@ coupons.each do |coupon|
 end
 
 
+
+
 def apply_clearance(cart)
-  # code here
+  new_cart = {}
+  if cart[]
 end
 
 def checkout(cart, coupons)
